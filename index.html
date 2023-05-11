@@ -13,7 +13,6 @@
       h1 {
         text-align: center;
         font-size: 40px;
-        text-decoration: underline solid;
         margin: 20px 0 10px 0;
       }
       h2 {
@@ -41,10 +40,16 @@
         color: #fff;
       }
       img {
-        max-width: 550px;
+        max-width: 400px;
         display: block;
         margin: auto;
         padding-bottom: 10px;
+        transition: all 150ms ease-in-out;
+      }
+
+      img:hover {
+        filter: contrast(80%);
+        transform: scale(1.2);
       }
       .container {
         display: block;
@@ -72,6 +77,17 @@
         color: blue;
         cursor: pointer;
       }
+      .grid {
+        margin: 10px 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 10px;
+      }
+      .grid img {
+        width: 100%;
+        object-fit: cover;
+        aspect-ratio: 1.5 / 1;
+      }
     </style>
   </head>
   <body>
@@ -79,23 +95,25 @@
     <div class="container">
       <h1>Piano</h1>
       <h2>The most popular instrument in the world!</h2>
-      <img
-        src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-        alt="burger and jacobi piano with sheet music"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1552422535-c45813c61732?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-        alt="a woman playing a yahama piano"
-      />
-      <img
-        src="https://images.unsplash.com/photo-1479118013749-9f79d55a28d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2670&q=80"
-        alt="the inside of an upright piano"
-      />
+      <div class="grid">
+        <img
+          src="https://images.unsplash.com/photo-1514119412350-e174d90d280e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          alt="burger and jacobi piano with sheet music"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1552422535-c45813c61732?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
+          alt="a woman playing a yahama piano"
+        />
+        <img
+          src="https://images.unsplash.com/photo-1479118013749-9f79d55a28d0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+          alt="the inside of an upright piano"
+        />
 
-      <img
-        src="https://images.unsplash.com/photo-1663405112027-28293e2b6945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
-        alt="a woman playing a white opened grand piano"
-      />
+        <img
+          src="https://images.unsplash.com/photo-1663405112027-28293e2b6945?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80"
+          alt="a woman playing a white opened grand piano"
+        />
+      </div>
       <p>
         The piano is a musical instrument that produces sound by striking
         strings with hammers, activated by keys. It has a wide range of notes,
