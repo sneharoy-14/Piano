@@ -22,19 +22,6 @@
         text-align: center;
         font-size: 18px;
       }
-      button {
-        display: block;
-        margin: 0 auto;
-        border: 2px solid #8e3200;
-        border-radius: 6px;
-        background: #a64b2a;
-        padding: 10px 15px;
-        font-size: 16px;
-        color: #fff;
-      }
-      button:hover {
-        cursor: pointer;
-      }
       footer {
         text-align: center;
         color: #fff;
@@ -51,6 +38,7 @@
         filter: contrast(80%);
         transform: scale(1.2);
       }
+
       .container {
         display: block;
         margin: 0 auto;
@@ -58,23 +46,46 @@
         padding: 20px;
         background: #ffebc1;
         border-radius: 10px;
+        color: #000;
       }
       .theme-button {
-        font-size: 12px;
+        display: block;
+        margin: 0 auto;
+        font-size: 15px;
         background: #000;
         color: #fff;
         border: none;
         margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 6px;
+      }
+      .theme-button:hover {
+        background: #fff;
+        color: #000;
       }
       .more-info {
         text-decoration: none;
       }
+      .more-info-button {
+        display: block;
+        margin: 0 auto;
+        border: 2px solid #8e3200;
+        border-radius: 6px;
+        background: #a64b2a;
+        padding: 10px 15px;
+        font-size: 16px;
+        color: #fff;
+      }
+      .more-info-button:hover {
+        cursor: pointer;
+      }
+
       .git-link {
         color: #fff;
         text-decoration: underline;
       }
       .git-link:hover {
-        color: blue;
+        color: #0000ff;
         cursor: pointer;
       }
       .grid {
@@ -88,10 +99,22 @@
         object-fit: cover;
         aspect-ratio: 1.5 / 1;
       }
+      .green {
+        background-color: #445626;
+        color: white;
+      }
+      .green .container {
+        background-color: #52682d;
+        color: #fff;
+      }
+      .green .more-info-button {
+        background-color: #6e8b3c;
+        border-color: #7c9d45;
+      }
     </style>
   </head>
-  <body>
-    <button class="theme-button">Dark Theme</button>
+  <body class="">
+    <button class="theme-button">Change Theme</button>
     <div class="container">
       <h1>Piano</h1>
       <h2>The most popular instrument in the world!</h2>
@@ -128,17 +151,30 @@
         href="https://www.hoffmanacademy.com/blog/10-things-everyone-should-know-about-the-piano/"
         target="_blank"
         class="more-info"
-        ><button>Facts about the Piano</button></a
+        ><button class="more-info-button">More facts about the piano</button></a
       >
     </div>
     <footer>
       <a
-        class="git-link"
         href="https://github.com/sneharoy-14/Piano"
+        class="git-link"
         target="_blank"
         >Open-sourced code</a
       >
       by Sneha Dey Roy
     </footer>
+    <script>
+      function changeTheme() {
+        let body = document.querySelector("body");
+        if (body.classList.contains("green")) {
+          body.classList.remove("green");
+        } else {
+          body.classList.add("green");
+        }
+      }
+
+      let themeButton = document.querySelector(".theme-button");
+      themeButton.addEventListener("click", changeTheme);
+    </script>
   </body>
 </html>
